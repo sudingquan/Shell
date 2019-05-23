@@ -1,5 +1,8 @@
 # Shell
-```bash
+```
 .
-└── README.md
+├── CountDay.sh
+├── Prime.sh
+├── README.md
+└── alert.sh
 ```
