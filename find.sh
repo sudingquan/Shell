@@ -15,7 +15,7 @@ function Fliter() {
 }
 function openfile() {
     if [[ $1 -ef `echo ${max_string_file[1]} | cut -d ":" -f 2` || $1 -ef `echo ${max_string_file[2]} | cut -d ":" -f 2` || $1 -ef `echo ${max_string_file[3]} | cut -d ":" -f 2` ]]; then
-        continue
+        return
     fi
     for i in `cat $1 | tr -c -s "a-zA-Z" " "`; do
         if [[ ${#i} -ge ${max[1]} ]]; then
