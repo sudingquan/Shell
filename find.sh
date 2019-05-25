@@ -47,7 +47,8 @@ function opendir() {
                         opendir $1/${i}
                     fi
                 else
-                    printf "\033[31m%s : Permission denied !\033[0m\n" $1/${i}
+                    #printf "\033[31m%s : Permission denied !\033[0m\n" $1/${i}
+                    exit 1
                 fi
             elif [[ -f $1/${i} ]]; then
                 check=`Fliter $1/${i}`
@@ -65,10 +66,11 @@ function opendir() {
 }
 
 if [[ $# -eq 0 ]]; then
-    opendir "."
-    printf "%s\n" ${result[1]}
-    printf "%s\n" ${result[2]}
-    printf "%s\n" ${result[3]}
+    #opendir "."
+    #printf "%s\n" ${result[1]}
+    #printf "%s\n" ${result[2]}
+    #printf "%s\n" ${result[3]}
+    exit 1
 else
     for i in $@; do
         if [[ -d ${i} ]]; then
@@ -78,11 +80,11 @@ else
             if [[ check -eq 0 ]]; then
                 continue
             else
-                printf "\033[31mError : %s is not a text file\033[0m\n" ${i}
+                #printf "\033[31mError : %s is not a text file\033[0m\n" ${i}
                 exit 1
             fi
         else
-            printf "\033[31mError : no such file or directory: %s\033[0m\n" ${i}
+            #printf "\033[31mError : no such file or directory: %s\033[0m\n" ${i}
             exit 1
         fi
     done
@@ -101,11 +103,12 @@ else
                     opendir ${i}
                 fi
             else
-                printf "\033[31m%s : Permission denied !\033[0m\n" ${i}
+                #printf "\033[31m%s : Permission denied !\033[0m\n" ${i}
+                exit 1
             fi
         fi
     done
-    printf "%s\n" ${result[1]}
-    printf "%s\n" ${result[2]}
     printf "%s\n" ${result[3]}
+    printf "%s\n" ${result[2]}
+    printf "%s\n" ${result[1]}
 fi
