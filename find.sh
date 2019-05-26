@@ -21,7 +21,7 @@ function openfile() {
         if [[ ${#i} -ge ${max[1]} ]]; then
             max+=(${#i})
             max_string_file+=(${#i}:$1)
-            result+=(${#i}:${i}:$1:`grep -n ${i} $1 | cut -d ":" -f 1 | head -n 1`)
+            result+=(${#i}:${i}:$1:`grep -w -n ${i} $1 | cut -d ":" -f 1 | head -n 1`)
             max=(`echo ${max[@]} | tr " " "\n" | sort -n | tr "\n" " "`)
             max_string_file=(`echo ${max_string_file[@]} | tr " " "\n" | sort -n -t ":" -k 1 | tr "\n" " "`)
             result=(`echo ${result[@]} | tr " " "\n" | sort -n -t ":" -k 1 | tr "\n" " "`)
