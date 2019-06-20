@@ -1,0 +1,8 @@
+#!/bin/bash
+if [[ $1 == *.c ]]; then
+    gcc $1 && ./a.out && rm a.out
+elif [[ $1 == *.cpp ]]; then
+    g++ $1 && ./a.out && rm a.out
+elif [[ $1 == *.sh ]]; then
+    bash ./$1
+fi

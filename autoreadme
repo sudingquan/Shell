@@ -1,0 +1,5 @@
+#!/bin/bash
+echo "# `pwd | xargs basename | cut -d "." -f 2`" >README.md
+echo "\`\`\`" >>README.md
+echo "`tree`" >>README.md
+echo "\`\`\`" >>README.md
