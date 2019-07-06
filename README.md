@@ -7,6 +7,7 @@
 ├── README.md
 ├── String.sh
 ├── alert.sh
+├── autogit
 ├── autoreadme
 ├── filter.conf
 ├── find
@@ -14,5 +15,5 @@
 ├── find.sh
 └── run
 
-1 directory, 11 files
+1 directory, 12 files
 ```
